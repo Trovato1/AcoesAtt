@@ -235,6 +235,17 @@
             text-align: center;
         }
         
+        .mascara {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 120px;
+            opacity: 0.9;
+            z-index: 100;
+            animation: flutuar 3s ease-in-out infinite alternate;
+            filter: drop-shadow(0 0 10px var(--lc-red));
+        }
+        
         @keyframes flutuar {
             from { transform: translateY(0); }
             to { transform: translateY(-15px); }
@@ -253,6 +264,10 @@
             h1 {
                 font-size: 2rem;
             }
+            
+            .mascara {
+                width: 80px;
+            }
         }
     </style>
     <!-- Adicione os SDKs do Firebase -->
@@ -263,11 +278,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>El Plan - Sistema de Sorteio</h1>
+        <h1>El Plan</h1>
         
         <div class="form-group">
             <label for="nome">Seu Codinome:</label>
-            <input type="text" id="nome" placeholder="Nome da FAC">
+            <input type="text" id="nome" placeholder="Ex: Professor, Tókyo, Berlim">
         </div>
         
         <div class="form-group">
@@ -297,6 +312,8 @@
             <div id="lista-resultados"></div>
         </div>
     </div>
+
+    <img src="https://i.imgur.com/8ZvJv0E.png" alt="Máscara de Salmão" class="mascara">
 
     <script>
         // Configuração do Firebase
